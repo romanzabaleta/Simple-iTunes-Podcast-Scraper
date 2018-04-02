@@ -44,5 +44,3 @@ podcast_links = []
 for genre_link in genre_links:
     all_links = scrape_links(genre_link)
     podcast_links.extend(recognize_pattern(all_links, pattern2))
-
-# test - Jon
