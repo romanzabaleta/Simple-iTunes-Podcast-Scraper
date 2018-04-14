@@ -49,21 +49,21 @@ for genre_link in genre_links:
 
 columns= ['Name', 'Genre ID', 'Episode Count', 'Episode Durations','Rating Value', 'Rating Volume','Description', 'Release Dates']
 podcast_df = pd.DataFrame([[0, 0, 0, 0, 0, 0, 0, 0]], columns = columns)
-
-def get_data(webp):
-    try:
-        url = web.URL(webp)
-        bs = BeautifulSoup(url.download(cached = False))
-        titles = bs.find('div', id='title')
-        if titles is not None:
-            title = titles.find('hi').getText()
-
-        my_row = [title, genreid, eount, edurations, rValue, rvolume, description, released]
-        my_row_pd = pd.DataFrame([my_row], columns = columns)  
-        df_podcast = df_podcast.append(my_row_pd, ignore_index=True)
-
-    except: 
-            return None 
+##
+##def get_data(webp):
+##    try:
+##        url = web.URL(webp)
+##        bs = BeautifulSoup(url.download(cached = False))
+##        titles = bs.find('div', id='title')
+##        if titles is not None:
+##            title = titles.find('hi').getText()
+##
+##        my_row = [title, genreid, eount, edurations, rValue, rvolume, description, released]
+##        my_row_pd = pd.DataFrame([my_row], columns = columns)  
+##        df_podcast = df_podcast.append(my_row_pd, ignore_index=True)
+##
+##    except: 
+##            return None 
 
 print(len(podcast_links))
 
