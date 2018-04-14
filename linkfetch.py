@@ -3,9 +3,6 @@ from bs4 import BeautifulSoup
 import re
 
 #iTunes##################################################################
-pa= 'https://itunes.apple.com/us/genre/podcasts/id26?mt=2'
-pat = 'https://itunes.apple.com/us/genre/podcasts-'
-pat2 = 'https://itunes.apple.com/us/podcast/'
 
 def scrape_links(page):
     if page is not None:
@@ -31,6 +28,4 @@ def find_links(page, pattern, pattern2):
         all_links = scrape_links(i)
         podcast_links.extend(recognize_pattern(all_links, pattern2))
     return podcast_links
-
-links = find_links(pa, pat, pat2)
 
