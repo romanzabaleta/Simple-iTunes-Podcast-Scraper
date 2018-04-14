@@ -6,7 +6,7 @@ from progressbar import ProgressBar
 
 ###Find links to genre pages with all podcast links
 #URL page with all genres of podcasts
-genres_page= ['https://itunes.apple.com/us/genre/podcasts/id26?mt=2']
+genres_page= 'https://itunes.apple.com/us/genre/podcasts/id26?mt=2'
 
 #Function to find all links and add to list 'links_page'
 def scrape_links(page):
@@ -21,7 +21,7 @@ def scrape_links(page):
         pass
     
 #List for genre links found in genre url page
-raw_genre_links = scrape_links(genres_page[0])
+raw_genre_links = scrape_links(genres_page)
 
 #pattern of links we are looking for
 pattern = 'https://itunes.apple.com/us/genre/podcasts-'
