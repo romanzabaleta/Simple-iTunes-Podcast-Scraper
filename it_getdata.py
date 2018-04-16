@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import pandas as pd
-from progressbar import ProgressBar
+#from progressbar import ProgressBar
 import pattern3.web as web
 
 #columns =  ['Name', 'Genre']
@@ -9,7 +9,7 @@ import pattern3.web as web
 
 def get_data(webp, df_podcast, columns):
   url = web.URL(webp)
-  bs = BeautifulSoup(url.download(cached = False), "lxml") 
+  bs = BeautifulSoup(url.download(cached = False), "lxml")
   try:
     ##################################################
    titles = bs.find('div', id='title')
@@ -19,7 +19,8 @@ def get_data(webp, df_podcast, columns):
     title = titles.find('h1').getText()
     if ratingvolumes is not None:
       ratingvolumes = str(ratingvolumes[0])
-      ratingvolume= 'Does not work yet'
+      ratingvolume = int(''.join(i for i in ratingvolumes if i.isdigit()))
+      print(ratingvolume)
     else:
       ratingvolume = 'Not Found'
    else:
