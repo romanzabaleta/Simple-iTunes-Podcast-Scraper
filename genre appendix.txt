@@ -1,0 +1,68 @@
+26	Podcasts	
+1301	Arts	
+1306	Food	
+1401	Literature	
+1402	Design	
+1405	Performing	
+1406	Visual	
+1459	Fashion & Beauty	
+1303	Comedy	
+1304	Education	
+1415	K–12	
+1416	Higher Education	
+1468	Educational Technology	
+1469	Language Courses	
+1470	Training	
+1305	Kinds & Family	
+1307	Health	
+1417	Fitness & Nutrition	
+1420	Self-Help	
+1421	Sexuality	
+1481	Alternative Health	
+1309	TV & Film	
+1310	Music	
+1311	News & Politics	
+1314	Religion & Spirituality	
+1438	Buddhism	
+1439	Christianity	
+1440	Islam	
+1441	Judaism	
+1444	Spirituality	
+1463	Hinduism	
+1464	Other	
+1315	Science & Medicine 	
+1477	Natural Sciences	
+1478	Medicine	
+1479	Social Sciences	
+1316	Sports & Recreation	
+1456	Outdoor	
+1465	Professional	
+1466	College & High School	School
+1467	Amateur	
+1318	Technology	
+1446	Gadgets	
+1448	Tech News	
+1450	Podcasting	
+1480	Software How-to	
+1321	Business	
+1410	Careers	
+1412	Investing	
+1413	Management & Marketing	
+1471	Business News	
+1472	Shopping	
+1323	Games & Hobbies	
+1404	Video Games	
+1454	Automotive	
+1455	Aviation	
+1460	Hobbies	
+1461	Other Games	
+1324	Society & Culture	
+1302	Personal Journals	
+1320	Places & Travel	
+1443	Philosophy	
+1462	History	
+1325	Government & Organizations	
+1473	National	
+1474	Regional	
+1475	Local	
+1476	Non-Profit	

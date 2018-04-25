@@ -2,9 +2,8 @@ from bs4 import BeautifulSoup
 import pandas as pd
 #from progressbar import ProgressBar
 import pattern3.web as web
-
-#columns =  ['Name', 'Genre']
-#podcast_df = pd.DataFrame(columns = columns)
+import re
+import genre_id_reader as gen 
 
 
 def get_data(webp, df_podcast, columns):
@@ -16,6 +15,9 @@ def get_data(webp, df_podcast, columns):
         titles = bs.find('div', id='title')
         ratingvolumes = bs.find_all('span', {'class' : 'rating-count'})
         ratingvalue = bs.find_all('span', {'itemprop' : 'ratingValue'})
+        genreraw = bs.find_all('li', {'class' : 'genre'})
+        print(genreraw)
+        print(ratingvalue)
     ##############################################################
 
         if titles is not None:
@@ -35,7 +37,15 @@ def get_data(webp, df_podcast, columns):
         else:
             rating = 'Not Found'
 
-        my_row = [title, ratingvolume, rating]
+        if genreraw is not None:
+            genreraw = str(genreraw[0])
+            genreid = re.findall(r"id\d\d\d\d", genreraw)
+            genrenum = re.findall(r'\d\d\d\d', genreid[0])
+            genre = str(gen.appendixgen()[str(genrenum[0])])
+        else:
+            genre = 'Not Found'
+
+        my_row = [title, ratingvolume, rating, genre]
         my_row_pd = pd.DataFrame([my_row], columns = columns)
 
         df_podcast = df_podcast.append(my_row_pd, ignore_index=True)
