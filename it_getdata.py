@@ -16,10 +16,8 @@ def get_data(webp, df_podcast, columns):
         ratingvolumes = bs.find_all('span', {'class' : 'rating-count'})
         ratingvalue = bs.find_all('span', {'itemprop' : 'ratingValue'})
         genreraw = bs.find_all('li', {'class' : 'genre'})
-        print(genreraw)
-        print(ratingvalue)
+        descraw = bs.find('div', {'class' : 'product-review'})
     ##############################################################
-
         if titles is not None:
             title = titles.find('h1').getText()
         else:
@@ -45,7 +43,12 @@ def get_data(webp, df_podcast, columns):
         else:
             genre = 'Not Found'
 
-        my_row = [title, ratingvolume, rating, genre]
+        if descraw is not None:
+            description = descraw.find('p').getText()
+        else:
+            description = 'Not Found'
+
+        my_row = [title, ratingvolume, rating, genre, description]
         my_row_pd = pd.DataFrame([my_row], columns = columns)
 
         df_podcast = df_podcast.append(my_row_pd, ignore_index=True)

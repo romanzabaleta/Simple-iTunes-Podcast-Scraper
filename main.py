@@ -15,11 +15,10 @@ itunesl = ['https://itunes.apple.com/us/genre/podcasts/id26?mt=2',
 #print(len(itunes_links))
 
 
-columns =   ['Name', 'Rating Volume', 'Rating', 'Genre']
+columns = ['Name', 'Rating Volume', 'Rating', 'Genre', 'Description']
 podcast_df = pd.DataFrame(columns=columns)
 
 podcast_df = get.get_data(itunesl[3], podcast_df, columns)
 
+
 print(podcast_df)
-
-
