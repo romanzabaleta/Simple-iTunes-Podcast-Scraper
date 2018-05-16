@@ -2,7 +2,8 @@ import linkfetch
 import it_getdata as get 
 import pandas as pd
 import genre_id_reader as gen 
- 
+import podatabase
+
 print('running...')
 
 itunesl = ['https://itunes.apple.com/us/genre/podcasts/id26?mt=2',
@@ -20,5 +21,4 @@ podcast_df = pd.DataFrame(columns=columns)
 
 podcast_df = get.get_data(itunesl[3], podcast_df, columns)
 
-
-print(podcast_df)
+podatabase.podb(podcast_df)
