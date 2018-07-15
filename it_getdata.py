@@ -9,7 +9,7 @@ import genre_id_reader as gen
 def get_data(webp, df_podcast, columns):
     url = web.URL(webp)
     bs = BeautifulSoup(url.download(cached = False), "lxml")
-
+    print(webp)
     try:
     ##############################################################
         titles = bs.find('div', id='title')
@@ -23,19 +23,20 @@ def get_data(webp, df_podcast, columns):
         else:
             title = 'Not Found'
 
-        if ratingvolumes is not None:
+        if len(ratingvolumes) != 0:
+            print(ratingvolumes)
             ratingvolumes = str(ratingvolumes[0])
             ratingvolume = int(''.join(i for i in ratingvolumes if i.isdigit()))
         else:
             ratingvolume = 'Not Found'
 
-        if ratingvalue is not None:
+        if len(ratingvalue) != 0:
             ratingvalue = str(ratingvalue[0])
             rating = float(''.join(i for i in ratingvalue if i.isdigit() or i == "."))
         else:
             rating = 'Not Found'
 
-        if genreraw is not None:
+        if len(genreraw) != 0:
             genreraw = str(genreraw[0])
             genreid = re.findall(r"id\d\d\d\d", genreraw)
             genrenum = re.findall(r'\d\d\d\d', genreid[0])
@@ -51,8 +52,8 @@ def get_data(webp, df_podcast, columns):
         my_row = [title, ratingvolume, rating, genre, description]
         my_row_pd = pd.DataFrame([my_row], columns = columns)
 
-        df_podcast = df_podcast.append(my_row_pd, ignore_index=True)
-        return df_podcast
+        print(my_row_pd)
+        return my_row_pd
 
     except ValueError:
         return "Error"
