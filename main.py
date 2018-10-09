@@ -23,12 +23,15 @@ print(len(itunes_links))
 
 columns = ['Name', 'Rating_Volume', 'Rating', 'Genre', 'Description']
 podcast_df = pd.DataFrame(columns=columns)
-#1500 to 1830
-for i in range(2000,2260):
-	ok = get.get_data(itunes_links[i][0], podcast_df, columns)
-	podcast_df = podcast_df.append(ok)
-	print(i)
-	print(itunes_links[i][0])
+
+for i in range(13800,13803):
+	try:
+		ok = get.get_data(itunes_links[i][0], podcast_df, columns)
+		podcast_df = podcast_df.append(ok)
+		print(i)
+		print(itunes_links[i][0])
+	except:
+		pass
 
 podatabase.updatepodb(podcast_df)
 #podatabase.newpodb(podcast_df)
